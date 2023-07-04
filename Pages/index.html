@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort Visualizer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="row m-4">
+            <h1>Insertion Sort Visualization</h1>
+        </header>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <label for="listInput">Enter a list of numbers (8-20), separated by commas</label>
+                <div>
+                    <input type="text" name="listInput" id="listInput" placeholder="8,7,6,5,4,3,2,1">
+                </div>
+                <div>
+                    <button id="submitList">Visualize</button>
+                </div>
+
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col d-none mt-5" id="chartContainer">
+
+            <h2>Process: </h2>
+            <p>Compare the highlighted bars<br>
+                If the right bar is less than the left bar the swap will happen<br>
+                If the swap happens the highlighted bar will move to the left and <br>
+                compare the bar to the bar behind and so on until it's no longer less <br>
+                than to the left bar Then the highlight will continue where it starts to stop
+            </p>
+            <div>
+                <button class="me-3" id="prev">Previous Step</button>
+                <button class="ms-3" id="next">Next Step</button>
+            </div>
+            <svg id="chart"></svg>
+        </div>
+        <div class="col"></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script src="../Javascript/script.js"></script>
+</body>
+
+</html>
