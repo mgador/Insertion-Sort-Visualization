@@ -47,10 +47,10 @@ $(document).ready(function () {
             dataLength = dataset.length;
             if (isAllNumber(dataset)) {
                 if (dataLength >= 8 && dataLength <= 20) {
-                    const width = 500;
-                    const height = 300;
+                    let highestNumber = Math.max(...dataset);
+                    const width = (dataLength * 100);
+                    const height = (highestNumber * 20);
                     const barWidth = width / dataset.length;
-
                     const svg = d3.select("#chart")
                         .attr("width", width)
                         .attr("height", height);
@@ -67,9 +67,12 @@ $(document).ready(function () {
                             .attr("width", barWidth - 1)
                             .attr("height", (d) => d * 20)
                             .attr("fill", (d, i) => {
-                                if (i == j || i == j - 1) {
+                                if (i == j) {
                                     return "orange";
-                                } else {
+                                } else if (i == j - 1) {
+                                    return "green";
+                                }
+                                else {
                                     return "steelblue";
                                 }
                             });
@@ -83,8 +86,10 @@ $(document).ready(function () {
                             .append("text")
                             .merge(labels)
                             .attr("x", (d, i) => i * barWidth + barWidth / 2)
-                            .attr("y", (d) => height - d * 20 + 12)
-                            .text((d) => d);
+                            .attr("y", (d) => height - d * 20 + 15)
+                            .text((d) => d)
+                            .style("color", "#EA906C")
+                            .style("font-weight", "bold")
 
                         labels.exit().remove();
                     };
